@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./fundo.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: sans-serif;
+}
+
+.board {
+  display: flex;
+  width: 170px;
+  flex-wrap: wrap;
+  margin: 10px;
+  opacity: 1;
+}
+
+.board.gameOver {
+  opacity: 0.3;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px #52527a;
+}
+
+.cell.O {
+  background-color: #2a9d8f;
+}
+
+.cell.X {
+  background-color: #ff80bf;
+}
+
+button {
+  border-radius: 4px;
+  border: none;
+  background-color: #6600cc;
+  color: white;
+  font-family: sans-serif;
+  transition: filter .2s;
+  opacity: 0.85;
+
+}
+
+button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
