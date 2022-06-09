@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 type Players = "O" | "X";
 
 function App() {
 
-  const [turn, setTurn] = useState<string>("X");
+  const [turn, setTurn] = useState<Players>("X");
   const [winner, setWinner] = useState<Players | null >(null);
   const [draw, setDraw] = useState<boolean | null>(null);
   const [marks, setMarks] = useState<{[key: string]: Players}>({});
@@ -86,10 +85,10 @@ function App() {
 
       <p>O jogo iniciará com o jogador "X". Já nas rodadas seguintes a partida terá início com o último vencedor. O jogo funciona da seguinte forma: aquele que enfileirar em sequência (seja na vertical, horizontal ou diagonal) três marcas suas, vence.</p>
 
-      {winner && <h1>Jogador "{winner}" ganhou</h1>}
-      {draw && <h1>Empate</h1>}
+      {winner && <h2>Jogador "{winner}" ganhou</h2>}
+      {draw && <h2>Empate</h2>}
 
-      {!gameOver && <h1> Vez do jogador "{turn}" </h1>}
+      {!gameOver && <h2> Vez do jogador "{turn}" </h2>}
 
       <div className={`board ${gameOver ? "gameOver" : null}`}>
         {getSquares().map((_, i) => (
