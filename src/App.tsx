@@ -22,7 +22,7 @@ function App() {
     }
 
     setMarks(prev => ({...prev, [index]: turn}));
-    setTurn(prev => prev == "O" ? "X" : "O");
+    setTurn(prev => prev == "X" ? "O" : "X");
   }
 
   const getCellPlayer = (index: number) => {
