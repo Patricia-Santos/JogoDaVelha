@@ -12,7 +12,6 @@ function App() {
   const [marks, setMarks] = useState<{[key: string]: Players}>({});
   const gameOver = !!winner || !!draw;
 
-
   const getSquares = () => {
     return new Array(9).fill(true);
   }
@@ -83,11 +82,14 @@ function App() {
 
   return (
     <div className="container">
+      <h1>JOGO DA VELHA</h1>
+
+      <p>O jogo iniciará com o jogador "X". Já nas rodadas seguintes a partida terá início com o último vencedor. O jogo funciona da seguinte forma: aquele que enfileirar em sequência (seja na vertical, horizontal ou diagonal) três marcas suas, vence.</p>
+
       {winner && <h1>Jogador "{winner}" ganhou</h1>}
       {draw && <h1>Empate</h1>}
 
-      {gameOver && <button onClick={reset}>Iniciar</button>}
-      {!gameOver && <p> Vez do jogador "{turn}" </p>}
+      {!gameOver && <h1> Vez do jogador "{turn}" </h1>}
 
       <div className={`board ${gameOver ? "gameOver" : null}`}>
         {getSquares().map((_, i) => (
@@ -96,6 +98,7 @@ function App() {
           </div>
         ))}
       </div>
+      {gameOver && <button onClick={reset}>Reiniciar</button>}
     </div>
   )
 }
